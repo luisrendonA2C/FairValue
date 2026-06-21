@@ -1,0 +1,357 @@
+@import "tailwindcss";
+@import "../styles/responsive.css";
+@import "../styles/states.css";
+
+/* ============================================
+   Fair Value — Premium Design System Tokens
+   Tailwind CSS v4 Theme Configuration
+   ============================================ */
+
+@theme inline {
+  /* --- Color Palette --- */
+  --color-navy: #00335E;
+  --color-navy-light: #004B8D;
+  --color-navy-dark: #001F3A;
+
+  --color-white: #FFFFFF;
+
+  --color-forest: #3E442B;
+  --color-forest-light: #4E5638;
+  --color-forest-dark: #2E3320;
+
+  --color-sage: #6A7062;
+  --color-sage-light: #7D8473;
+  --color-sage-dark: #575C4F;
+
+  --color-amber: #ECA72C;
+  --color-amber-light: #F0BA54;
+  --color-amber-dark: #D4911E;
+
+  /* --- Semantic Colors --- */
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-navy-dark);
+  --color-muted: var(--color-sage);
+  --color-accent: var(--color-amber);
+  --color-primary: var(--color-navy);
+  --color-secondary: var(--color-forest);
+
+  /* --- Typography --- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-montserrat), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* --- Font Sizes (Premium Typography Scale) --- */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
+
+  /* --- Spacing (4px grid) --- */
+  --spacing-0: 0px;
+  --spacing-px: 1px;
+  --spacing-0_5: 2px;
+  --spacing-1: 4px;
+  --spacing-1_5: 6px;
+  --spacing-2: 8px;
+  --spacing-2_5: 10px;
+  --spacing-3: 12px;
+  --spacing-3_5: 14px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-9: 36px;
+  --spacing-10: 40px;
+  --spacing-11: 44px;
+  --spacing-12: 48px;
+  --spacing-14: 56px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+  --spacing-28: 112px;
+  --spacing-32: 128px;
+  --spacing-36: 144px;
+  --spacing-40: 160px;
+  --spacing-44: 176px;
+  --spacing-48: 192px;
+  --spacing-52: 208px;
+  --spacing-56: 224px;
+  --spacing-60: 240px;
+  --spacing-64: 256px;
+  --spacing-72: 288px;
+  --spacing-80: 320px;
+  --spacing-96: 384px;
+
+  /* --- Border Radius --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 2px rgba(0, 51, 94, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 51, 94, 0.08), 0 2px 4px -2px rgba(0, 51, 94, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 51, 94, 0.08), 0 4px 6px -4px rgba(0, 51, 94, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 51, 94, 0.1), 0 8px 10px -6px rgba(0, 51, 94, 0.05);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 51, 94, 0.2);
+  --shadow-glow: 0 0 20px rgba(236, 167, 44, 0.3);
+  --shadow-glow-lg: 0 0 40px rgba(236, 167, 44, 0.4);
+
+  /* --- Transitions --- */
+  --transition-fast: 150ms;
+  --transition-normal: 200ms;
+  --transition-slow: 300ms;
+
+  /* --- Breakpoints --- */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* ============================================
+   Glassmorphism Utility Classes
+   ============================================ */
+
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 25px -5px rgba(0, 51, 94, 0.1), 0 8px 10px -6px rgba(0, 51, 94, 0.05);
+}
+
+.glass-dark {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(0, 51, 94, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 20px 25px -5px rgba(0, 51, 94, 0.1);
+}
+
+.glass-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(0, 51, 94, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   Premium Gradient Utilities
+   ============================================ */
+
+.gradient-navy-forest {
+  background: linear-gradient(135deg, #00335E 0%, #3E442B 100%);
+}
+
+.gradient-navy-dark {
+  background: linear-gradient(180deg, #00335E 0%, #001F3A 100%);
+}
+
+.gradient-amber {
+  background: linear-gradient(135deg, #ECA72C 0%, #D4911E 100%);
+}
+
+.gradient-hero-overlay {
+  background: linear-gradient(180deg, rgba(0, 51, 94, 0.9) 0%, rgba(0, 51, 94, 0.4) 50%, transparent 100%);
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+/* Prevent horizontal scroll on all breakpoints */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(236, 167, 44, 0.3);
+  color: var(--color-navy-dark);
+}
+
+/* ============================================
+   Responsive Base Typography
+   ============================================ */
+
+/* Mobile-first font size adjustments */
+@media (max-width: 767px) {
+  html {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.3;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   Responsive Layout Utilities
+   ============================================ */
+
+/* Ensure images don't overflow containers */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent long words from causing horizontal overflow */
+p, li, span, a, td, th {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* ============================================
+   Admin Layout Responsive
+   ============================================ */
+
+/* Admin sidebar: hidden on mobile, icon-only on tablet, full on desktop */
+@media (max-width: 767px) {
+  .admin-layout-sidebar {
+    display: none;
+  }
+
+  .admin-layout-main {
+    margin-left: 0;
+    padding-top: 4rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .admin-layout-sidebar {
+    width: 4.5rem;
+  }
+
+  .admin-layout-sidebar .nav-label {
+    display: none;
+  }
+
+  .admin-layout-main {
+    margin-left: 4.5rem;
+    padding-top: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .admin-layout-sidebar {
+    width: 16rem;
+  }
+
+  .admin-layout-main {
+    margin-left: 16rem;
+    padding-top: 4rem;
+  }
+}
+
+/* ============================================
+   Focus & Interaction Accessibility
+   ============================================ */
+
+/* Ensure focus indicators are visible on all interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Minimum touch target size for mobile */
+@media (max-width: 767px) {
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    font-size: 16px; /* Prevent iOS zoom on focus */
+  }
+}
+
+/* ============================================
+   Skeleton Shimmer Animation
+   ============================================ */
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
