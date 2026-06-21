@@ -108,7 +108,7 @@ export default function HomePage() {
           <h2 className="text-white font-heading text-3xl md:text-4xl font-bold text-center mb-12">
             ¿Cómo Funciona?
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 stagger-children">
             {steps.map((step) => (
               <GlassPanel key={step.number} variant="light" padding="md" className="text-center">
                 <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber text-white font-bold text-lg mb-3">
@@ -128,7 +128,7 @@ export default function HomePage() {
           <h2 className="text-white font-heading text-3xl md:text-4xl font-bold text-center mb-12">
             Vehículos Destacados
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
             {featuredVehicles.map((vehicle) => (
               <VehicleCard
                 key={vehicle.id}
@@ -155,7 +155,7 @@ export default function HomePage() {
           <h2 className="text-white font-heading text-3xl md:text-4xl font-bold text-center mb-12">
             Próximos Eventos
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto stagger-children">
             {upcomingEvents.map((event) => (
               <EventCard
                 key={event.id}

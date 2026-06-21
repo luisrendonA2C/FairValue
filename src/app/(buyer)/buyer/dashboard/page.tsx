@@ -10,6 +10,7 @@ import { StatCard } from '@/components/ui/StatCard';
 import { Badge } from '@/components/ui/Badge';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { getLeadLevel } from '@/lib/leadScoring';
+import { FileText, Calendar, Star } from 'lucide-react';
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
 
@@ -112,13 +113,13 @@ export default function BuyerDashboardPage() {
           <StatCard
             value={activeOffers.length}
             label="Ofertas activas"
-            icon={<span>📋</span>}
+            icon={<FileText className="w-5 h-5 text-amber" />}
           />
 
           <StatCard
             value={watchlist.length}
             label="Watchlist"
-            icon={<span>⭐</span>}
+            icon={<Star className="w-5 h-5 text-amber" />}
           />
 
           {/* Verification Status */}
@@ -151,7 +152,7 @@ export default function BuyerDashboardPage() {
           <StatCard
             value={Math.min(upcomingEvents.length, 3)}
             label="Eventos próximos"
-            icon={<span>📅</span>}
+            icon={<Calendar className="w-5 h-5 text-amber" />}
           />
         </div>
 

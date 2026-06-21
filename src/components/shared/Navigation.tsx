@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
+import { useToast } from '@/components/ui/Toast';
 
 export type NavigationRole = 'public' | 'buyer' | 'dealer' | 'admin';
 
@@ -226,7 +227,7 @@ function MobileMenu({
         </button>
       </div>
 
-      <nav className="flex-1 flex flex-col items-center justify-center gap-2 px-6">
+      <nav className="flex-1 flex flex-col items-center justify-center gap-2 px-6 stagger-children">
         {links.map((link) => {
           const isActive = activePath === link.href;
           return (
@@ -346,7 +347,7 @@ function PublicNavigation({
                       px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
                       ${isActive
                         ? 'text-amber'
-                        : 'text-white/80 hover:text-white hover:bg-white/10'
+                        : 'text-white/80 hover:text-white relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-amber after:transition-all after:duration-200 hover:after:w-3/4 after:rounded-full'
                       }
                     `}
                   >
@@ -623,11 +624,13 @@ export const Navigation: React.FC<NavigationProps> = ({
   const pathname = usePathname();
   const router = useRouter();
   const { logout } = useAuth();
+  const { showToast } = useToast();
   const activePath = currentPath ?? pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleSignOut = () => {
     logout();
+    showToast('Signed out successfully');
     router.push('/');
   };
 

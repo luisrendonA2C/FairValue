@@ -156,35 +156,35 @@ export default function DealerDashboardPage() {
             <StatCard
               value={activeVehicles}
               label="Active Vehicles"
-              icon={<span>🚗</span>}
+              icon={<Car className="w-5 h-5 text-amber" />}
               trend="up"
               trendValue="+2 this month"
             />
             <StatCard
               value={totalOffers}
               label="Total Offers"
-              icon={<span>📋</span>}
+              icon={<FileText className="w-5 h-5 text-amber" />}
               trend="up"
               trendValue={`${totalOffers} received`}
             />
             <StatCard
               value={leadsGenerated}
               label="Leads Generated"
-              icon={<span>🎯</span>}
+              icon={<Target className="w-5 h-5 text-amber" />}
               trend="neutral"
               trendValue="From all events"
             />
             <StatCard
               value={leadsSelected}
               label="Leads Selected"
-              icon={<span>✅</span>}
+              icon={<CheckCircle className="w-5 h-5 text-amber" />}
               trend="up"
               trendValue="Contacted & selected"
             />
             <StatCard
               value={`${conversionRate}%`}
               label="Conversion Rate"
-              icon={<span>📈</span>}
+              icon={<TrendingUp className="w-5 h-5 text-amber" />}
               trend={conversionRate >= 30 ? 'up' : conversionRate >= 15 ? 'neutral' : 'down'}
               trendValue="Lead → Contact"
             />
@@ -194,16 +194,16 @@ export default function DealerDashboardPage() {
           <div className="lg:col-span-3 space-y-6">
             {/* Quick Action Buttons */}
             <div className="flex flex-wrap gap-3">
-              <Button variant="outline" size="sm" icon={<span>➕</span>}>
+              <Button variant="outline" size="sm" icon={<Plus className="w-4 h-4" />}>
                 Add Vehicle
               </Button>
-              <Button variant="outline" size="sm" icon={<span>🎯</span>}>
+              <Button variant="outline" size="sm" icon={<Target className="w-4 h-4" />}>
                 View Leads
               </Button>
-              <Button variant="outline" size="sm" icon={<span>📋</span>}>
+              <Button variant="outline" size="sm" icon={<FileText className="w-4 h-4" />}>
                 View Offers
               </Button>
-              <Button variant="outline" size="sm" icon={<span>📄</span>}>
+              <Button variant="outline" size="sm" icon={<Upload className="w-4 h-4" />}>
                 Upload Documents
               </Button>
             </div>

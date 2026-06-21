@@ -157,7 +157,7 @@ export default function HelpCenterPage() {
             </span>
             <h2 className="font-heading text-2xl font-bold text-white">For Buyers</h2>
           </div>
-          <div className="space-y-3">
+          <div className="space-y-3 stagger-children">
             {buyerFAQs.map((faq) => (
               <FAQCard key={faq.question} item={faq} />
             ))}
@@ -176,7 +176,7 @@ export default function HelpCenterPage() {
             </span>
             <h2 className="font-heading text-2xl font-bold text-white">For Dealers</h2>
           </div>
-          <div className="space-y-3">
+          <div className="space-y-3 stagger-children">
             {dealerFAQs.map((faq) => (
               <FAQCard key={faq.question} item={faq} />
             ))}

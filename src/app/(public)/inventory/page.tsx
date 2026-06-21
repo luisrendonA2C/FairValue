@@ -258,7 +258,7 @@ function InventoryContent() {
             {paginatedVehicles.length > 0 ? (
               <>
                 {/* Vehicle Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 stagger-children">
                   {paginatedVehicles.map((vehicle) => (
                     <VehicleCard
                       key={vehicle.id}
@@ -295,14 +295,16 @@ function InventoryContent() {
               </>
             ) : (
               /* Empty State */
-              <EmptyState
-                title="No se encontraron vehículos"
-                message="Intenta ajustar los filtros o la búsqueda para ver más resultados."
-                action={{
-                  label: 'Limpiar Filtros',
-                  onClick: clearAll,
-                }}
-              />
+              <div className="animate-slideUp">
+                <EmptyState
+                  title="No se encontraron vehículos"
+                  message="Intenta ajustar los filtros o la búsqueda para ver más resultados."
+                  action={{
+                    label: 'Limpiar Filtros',
+                    onClick: clearAll,
+                  }}
+                />
+              </div>
             )}
           </main>
         </div>

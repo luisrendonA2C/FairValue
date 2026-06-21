@@ -156,7 +156,7 @@ export default function LocationsPage() {
           <h2 className="font-heading text-2xl font-bold text-white text-center mb-10">
             All Locations
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
             {locations.map((loc) => (
               <LocationCard key={loc.city} location={loc} />
             ))}

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Vehicle, VehicleStatus } from '@/types';
 import { getImageUrl } from '@/lib/imageProvider';
 import { Badge, BadgeStatusColor } from '@/components/ui/Badge';
+import { useToast } from '@/components/ui/Toast';
 
 export interface VehicleCardProps {
   vehicle: Vehicle;
@@ -41,6 +42,7 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({
   className = '',
 }) => {
   const router = useRouter();
+  const { showToast } = useToast();
   const imageUrl = getImageUrl('vehicle', vehicle.imageIds[0] || vehicle.id);
   const title = `${vehicle.year} ${vehicle.make} ${vehicle.model}`;
   const badgeConfig = statusBadgeConfig[vehicle.status];
@@ -56,7 +58,7 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({
     <div
       onClick={() => router.push(`/vehicle/${vehicle.id}`)}
       className={[
-        'group relative rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl cursor-pointer',
+        'group relative rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,51,94,0.25)] cursor-pointer',
         cardBg,
         className,
       ].filter(Boolean).join(' ')}
@@ -92,6 +94,7 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({
             onClick={(e) => {
               e.stopPropagation();
               onFavorite(vehicle.id);
+              showToast(isFavorited ? 'Removed from watchlist' : 'Added to watchlist', 'info');
             }}
             className="absolute top-3 right-3 p-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 transition-colors duration-200 hover:bg-black/50"
             aria-label={isFavorited ? 'Remove from favorites' : 'Add to favorites'}

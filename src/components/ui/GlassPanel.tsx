@@ -15,7 +15,7 @@ export interface GlassPanelProps {
 
 const variantStyles: Record<GlassPanelVariant, string> = {
   light: 'backdrop-blur-md bg-white/10 border border-white/20 shadow-xl',
-  dark: 'backdrop-blur-md bg-navy-dark/80 border border-white/10',
+  dark: 'backdrop-blur-xl bg-[#0d1f35]/85 border border-white/[0.07] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]',
   navy: 'backdrop-blur-xl bg-navy/90 border border-white/5',
 };
 

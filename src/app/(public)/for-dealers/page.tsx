@@ -154,7 +154,7 @@ export default function ForDealersPage() {
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-white text-center mb-12">
             Why Dealers Choose Fair Value
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
             {benefits.map((benefit) => (
               <GlassPanel
                 key={benefit.title}

@@ -18,7 +18,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 const variantStyles: Record<ButtonVariant, string> = {
   primary: [
     'bg-amber text-white',
-    'hover:bg-amber-dark hover:shadow-glow',
+    'hover:bg-amber-dark hover:shadow-glow hover-glow-amber',
     'focus:ring-2 focus:ring-amber/50 focus:ring-offset-2 focus:ring-offset-transparent',
     'active:bg-amber-dark',
   ].join(' '),
@@ -102,6 +102,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       'font-medium',
       'transition-all duration-200 ease-in-out',
       'select-none',
+      'btn-press',
       'cursor-pointer',
     ].join(' ');
 

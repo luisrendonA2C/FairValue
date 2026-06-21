@@ -51,7 +51,7 @@ export const Table: React.FC<TableProps> = ({
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-navy/10">
+            <tr className="bg-navy/10 sticky top-0 z-10">
               {columns.map((col) => (
                 <th
                   key={col.key}
@@ -85,8 +85,8 @@ export const Table: React.FC<TableProps> = ({
               <tr
                 key={rowIndex}
                 className={[
-                  'transition-all duration-150',
-                  'hover:bg-amber/5 hover:border-l-2 hover:border-l-amber',
+                  'transition-colors duration-150',
+                  'hover:bg-white/[0.03]',
                   rowIndex % 2 === 0 ? 'bg-transparent' : 'bg-white/3',
                 ].join(' ')}
               >

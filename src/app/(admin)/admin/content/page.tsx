@@ -60,7 +60,7 @@ const DEFAULT_CONTENT: ContentState = {
     'Evento exclusivo de ofertas para vehículos SUV y sedanes de lujo.',
     'Gran subasta de fin de año con descuentos especiales y financiamiento.',
   ],
-  promotionalBannerText: '🎉 Nuevo: Eventos semanales con vehículos exclusivos. ¡Regístrate hoy!',
+  promotionalBannerText: '✦ Nuevo: Eventos semanales con vehículos exclusivos. ¡Regístrate hoy!',
   promotionalBannerVisible: true,
 };
 

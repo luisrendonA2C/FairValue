@@ -12,6 +12,7 @@ import { PrivacyNotice } from '@/components/shared/PrivacyNotice';
 import { GlassPanel } from '@/components/ui/GlassPanel';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
+import { useToast } from '@/components/ui/Toast';
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
 
@@ -100,6 +101,7 @@ export default function VehicleDetailPage() {
   const params = useParams();
   const vehicleId = params.id as string;
 
+  const { showToast } = useToast();
   const [isFavorited, setIsFavorited] = useState(false);
   const [offerAmount, setOfferAmount] = useState('');
   const [offerSubmitted, setOfferSubmitted] = useState(false);
@@ -163,6 +165,7 @@ export default function VehicleDetailPage() {
   const handleSubmitOffer = () => {
     if (!offerAmount) return;
     setOfferSubmitted(true);
+    showToast(`Offer of $${Number(offerAmount).toLocaleString()} submitted successfully!`, 'success');
     setTimeout(() => setOfferSubmitted(false), 4000);
     setOfferAmount('');
   };
@@ -194,7 +197,7 @@ export default function VehicleDetailPage() {
 
   return (
     <div className="bg-navy-dark min-h-screen text-white pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fadeIn">
 
         {/* ─── Top Header Section ──────────────────────────────────────────── */}
         <header className="mb-8">

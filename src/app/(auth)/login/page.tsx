@@ -48,7 +48,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex animate-fadeIn">
       {/* Left side — Hero background with overlay */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
         {/* Background image */}
@@ -91,7 +91,7 @@ export default function LoginPage() {
           </div>
 
           {/* Glass login form */}
-          <GlassPanel variant="light" padding="lg" className="w-full">
+          <GlassPanel variant="light" padding="lg" className="w-full animate-slideUp">
             <h2 className="text-2xl font-semibold text-white mb-1">Welcome back</h2>
             <p className="text-sage text-sm mb-6">Sign in to your account</p>
 
@@ -176,7 +176,7 @@ export default function LoginPage() {
             <p className="text-center text-xs text-sage/70 uppercase tracking-wider font-medium">
               Quick Demo Access
             </p>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-3 stagger-children">
               {/* Buyer Demo */}
               <button
                 onClick={() => handleRoleSwitch('buyer')}

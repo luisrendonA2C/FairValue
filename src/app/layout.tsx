@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat, JetBrains_Mono } from "next/font/google";
 import { DataProvider } from "@/hooks/useData";
 import { AuthProvider } from "@/hooks/useAuth";
+import { ToastProvider } from "@/components/ui/Toast";
 import "./globals.css";
 
 const inter = Inter({
@@ -41,7 +42,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans">
         <AuthProvider>
-          <DataProvider>{children}</DataProvider>
+          <DataProvider><ToastProvider>{children}</ToastProvider></DataProvider>
         </AuthProvider>
       </body>
     </html>

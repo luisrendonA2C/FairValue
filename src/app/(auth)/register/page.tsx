@@ -68,7 +68,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex animate-fadeIn">
       {/* Left side — Hero background with overlay */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
         {/* Background image */}
@@ -118,7 +118,7 @@ export default function RegisterPage() {
           />
 
           {/* Glass register form */}
-          <GlassPanel variant="light" padding="lg" className="w-full">
+          <GlassPanel variant="light" padding="lg" className="w-full animate-slideUp">
             <h2 className="text-2xl font-semibold text-white mb-1">Create your account</h2>
             <p className="text-sage text-sm mb-6">Join the premium vehicle marketplace</p>
 

@@ -62,7 +62,7 @@ export default function AdminDashboardPage() {
         </div>
 
         {/* Stat Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-8 stagger-children">
           <GradientBackground variant="navy-dark" className="rounded-2xl">
             <StatCard
               value={users.length}
@@ -207,7 +207,8 @@ export default function AdminDashboardPage() {
             <GlassPanel variant="dark" padding="lg" className="h-full">
               <div className="flex flex-col items-center justify-center h-40">
                 <p className="text-lg font-heading font-semibold text-white mb-2">
-                  📊 Analytics — Coming Soon
+                  <svg className="w-5 h-5 text-amber inline mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+                  Analytics — Coming Soon
                 </p>
                 <p className="text-sm text-sage text-center">
                   Gráficas de ofertas, leads y actividad por evento
@@ -219,7 +220,8 @@ export default function AdminDashboardPage() {
             <GlassPanel variant="dark" padding="lg" className="h-full">
               <div className="flex flex-col items-center justify-center h-40">
                 <p className="text-lg font-heading font-semibold text-white mb-2">
-                  📈 Reportes — Coming Soon
+                  <svg className="w-5 h-5 text-amber inline mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
+                  Reportes — Coming Soon
                 </p>
                 <p className="text-sm text-sage text-center">
                   Métricas de conversión y rendimiento de dealers
